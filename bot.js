@@ -97,6 +97,7 @@ app.get('/', async function(req, res) {
 			});
 
 		res.send(connectInfo);
+		res.header('Info');
 		res.end();
 
 	});
