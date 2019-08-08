@@ -104,7 +104,9 @@ app.get('/', async function(req, res) {
 
 });
 
-var server = app.listen(3000, () => {
+console.log(process.env.PORT);
+
+var port = process.env.PORT || 3000; app.listen(port, function() {
 	console.log(`Example app listening on port 3000!`);
 });
 
