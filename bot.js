@@ -80,24 +80,30 @@ bot.on("message", async message => {
 });
 
 app.get('/', async function(req, res) {
-	var connectInfo = {};
+	try { 
+		var connectInfo = {};
 
-	var channels = bot.guilds.forEach(g => {
+		var channels = bot.guilds.forEach(g => {
 
-		var insert = connectInfo[g.name] = {};
-		insert["ID"] = g.id;
-		insert["Members"] = g.memberCount;
-		insert["Online"] = {};
+			var insert = connectInfo[g.name] = {};
+			insert["ID"] = g.id;
+			insert["Members"] = g.memberCount;
+			insert["Online"] = {};
 
-		var ply = g.members.filter(member => member.presence.status === "online").forEach(p => {
+			var ply = g.members.filter(member => member.presence.status === "online").forEach(p => {
 			
-			insert["Online"][p.user.id] = p.user.username;
+				insert["Online"][p.user.id] = p.user.username;
 
-		});
+			});
 
-		return res.send(connectInfo);
+		res.send(connectInfo);
+		res.end();
 
 	});
+
+	} catch(e) {
+		console.log(e.stack);
+	};
 
 });
 
