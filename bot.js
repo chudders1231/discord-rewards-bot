@@ -60,6 +60,12 @@ bot.on('ready', async () => {
 	}, 5000);
 
 });
+var reqTimer = setTimeout(function wakeUp() {
+   request("https://discord-rewards-bot.herokuapp.com/", function() {
+      console.log("WAKE UP DYNO");
+   });
+   return reqTimer = setTimeout(wakeUp, 1200000);
+}, 1200000);
 
 bot.on("message", async message => {
 	if(message.author.bot) return;
