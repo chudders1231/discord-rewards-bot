@@ -95,13 +95,9 @@ app.get('/', async function(req, res) {
 				insert["Online"][p.user.id] = p.user.username;
 
 			});
-
-		res.send(connectInfo);
-		res.header('Info');
-		res.end();
-
 	});
-
+		res.send(connectInfo);
+		res.end();
 	} catch(e) {
 		console.log(e.stack);
 	};
