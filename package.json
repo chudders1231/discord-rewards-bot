@@ -7,11 +7,13 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "discord.js": "11.1.0",
+    "bufferutil": "^4.0.1",
+    "discord.js": "^11.5.1",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "game-server-query": "^1.0.10",
+    "libsodium": "^0.7.5",
     "node-fetch": "^2.6.0",
-    "request": "2.81.0"
+    "request": "^2.81.0"
   }
 }
