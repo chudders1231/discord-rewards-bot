@@ -119,8 +119,8 @@ app.get('/', async function(req, res) {
 	};
 
 });
-
-var port = process.env.PORT;
+console.log(process.env.TOKEN)
+var port = process.env.PORT || 8080;
 
 app.listen(port, function() {
 	console.log(`Example app listening on port ${port}`);
