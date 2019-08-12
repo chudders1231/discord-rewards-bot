@@ -119,7 +119,6 @@ app.get('/', async function(req, res) {
 	};
 
 });
-console.log(process.env.TOKEN)
 var port = process.env.PORT || 8080;
 
 app.listen(port, function() {
@@ -132,4 +131,4 @@ app.listen(port, function() {
 
 // THIS  MUST  BE  THIS  WAY
 
-bot.login(process.env.TOKEN);//BOT_TOKEN is the Client Secret
+bot.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
