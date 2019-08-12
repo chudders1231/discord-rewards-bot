@@ -82,7 +82,7 @@ bot.on("message", async message => {
 	if(cmd) {
 
 		message.guild.members.forEach(g => { 
-			
+
 			if (g.id === bot.user.id) {
 
 				cmd.run(bot, message, args);
@@ -120,7 +120,7 @@ app.get('/', async function(req, res) {
 
 });
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT;
 
 app.listen(port, function() {
 	console.log(`Example app listening on port ${port}`);
