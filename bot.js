@@ -86,7 +86,7 @@ bot.on("message", async message => {
 			if (g.id === bot.user.id) {
 
 				cmd.run(bot, message, args);
-				console.log(g.id, g.name, bot.id, bot.name)
+				
 			};
 
 		});
