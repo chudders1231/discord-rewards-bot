@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const express = require("express");
 var app = express();
+require('dotenv').config();
 
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
@@ -79,8 +80,16 @@ bot.on("message", async message => {
 
 	let cmd = bot.commands.get(command.slice(prefix.length));
 	if(cmd) {
-		cmd.run(bot, message, args)
-		message.delete();
+
+		message.guild.members.forEach(g => { 
+			
+			if (g.id === bot.user.id) {
+
+				cmd.run(bot, message, args);
+				console.log(g.id, g.name, bot.id, bot.name)
+			};
+
+		});
 	};
 
 });
@@ -111,10 +120,10 @@ app.get('/', async function(req, res) {
 
 });
 
-console.log(process.env.PORT);
+var port = process.env.PORT || 8080;
 
-var port = process.env.PORT || 3000; app.listen(port, function() {
-	console.log(`Example app listening on port 3000!`);
+app.listen(port, function() {
+	console.log(`Example app listening on port ${port}`);
 });
 
 
@@ -123,4 +132,4 @@ var port = process.env.PORT || 3000; app.listen(port, function() {
 
 // THIS  MUST  BE  THIS  WAY
 
-bot.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
+bot.login(process.env.TOKEN);//BOT_TOKEN is the Client Secret
