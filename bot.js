@@ -83,13 +83,7 @@ bot.on("message", async message => {
 	if(cmd) {
 
 		message.guild.members.forEach(g => { 
-			console.log( g.id === bot.user.id );
-			if (g.id === bot.user.id) {
-
-				cmd.run(bot, message, args);
-
-			};
-
+			cmd.run(bot, message, args);
 		});
 	};
 
