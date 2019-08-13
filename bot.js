@@ -5,6 +5,7 @@ const express = require("express");
 var app = express();
 require('dotenv').config();
 
+
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 bot.mutes = require("./mutes.json");
@@ -86,7 +87,7 @@ bot.on("message", async message => {
 			if (g.id === bot.user.id) {
 
 				cmd.run(bot, message, args);
-				
+
 			};
 
 		});
@@ -119,6 +120,8 @@ app.get('/', async function(req, res) {
 	};
 
 });
+
+
 var port = process.env.PORT || 8080;
 
 app.listen(port, function() {
