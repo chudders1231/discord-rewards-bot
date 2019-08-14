@@ -83,6 +83,7 @@ bot.on("message", async message => {
 	if(cmd) {
 
 		message.guild.members.forEach(g => { 
+			console.log(g)
 			cmd.run(bot, message, args);
 		});
 	};
