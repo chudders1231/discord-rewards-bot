@@ -1,3 +1,6 @@
+const fs = require("fs");
+let Discord = module.require("discord.js");
+
 module.exports.run = async (bot, message, args) => {
 
 	fs.readdir("./", (err, files) => {
@@ -6,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 		let jsFiles = files.filter(f => f.split(".").pop() === "js");
 
 		if(jsFiles.length <= 0) {
-			console.log("No commands to load");
+			console.log("No commands to index");
 			return;
 		}
 
