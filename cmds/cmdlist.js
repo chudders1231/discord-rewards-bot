@@ -15,8 +15,7 @@ module.exports.run = async (bot, message, args) => {
 
 		console.log(`Loading ${jsFiles.length} commands!`)	;
 		jsFiles.forEach((f, i) => {
-			let props = require(`${f}`);;
-			let message = "```${f}\n```"
+			let message = "```${bot.commands[${f}]}\n```"
 
 			message.channel.send(message);
 		});
