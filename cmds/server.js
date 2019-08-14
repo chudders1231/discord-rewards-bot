@@ -18,6 +18,7 @@ module.exports.run = async (bot, message, args) => {
 		.addField("Location", `${info.location}`)
 		.addField("Status", `${online}`)
 		.addField("Players", `${info.players}/${info.maxplayers}`)
+		.setThumbnail('http://lofrev.net/wp-content/photos/2017/03/garrys_mod_logo.png')
 
 	message.channel.send({embed: embed});
 

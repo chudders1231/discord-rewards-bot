@@ -29,5 +29,6 @@ if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sen
 }
 
 module.exports.help = {
-	name: "unmute"
+	name: "unmute",
+	description: "Unmute a specific user!"
 }

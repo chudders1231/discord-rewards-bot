@@ -9,6 +9,7 @@ module.exports.run = async (bot, message, args) => {
 			.addField("Full Username", `${message.author.username}#${message.author.discriminator}`)
 			.addField("ID", message.author.id)
 			.addField("Created At", message.author.createdAt);
+			.setThumbnail(message.author.displayAvatarURL)
 
 		message.channel.send({embed: embed});
 
@@ -16,5 +17,6 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-	name: "userinfo"
+	name: "userinfo",
+	description: "Shows you current info about a specific ip !"
 }
