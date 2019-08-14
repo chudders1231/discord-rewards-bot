@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 			.setColor("#9B59B6")
 			.addField("Full Username", `${message.author.username}#${message.author.discriminator}`)
 			.addField("ID", message.author.id)
-			.addField("Created At", message.author.createdAt);
+			.addField("Created At", message.author.createdAt)
 			.setThumbnail(message.author.displayAvatarURL)
 
 		message.channel.send({embed: embed});
